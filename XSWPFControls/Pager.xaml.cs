@@ -145,7 +145,7 @@ namespace XSWPFControls
                 return PageIndex < PageCount;
             }
         }
-        #region
+        #endregion
 
 
         #region ClickEvent
