@@ -1,4 +1,5 @@
 ﻿using GalaSoft.MvvmLight;
+using GalaSoft.MvvmLight.Messaging;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -18,7 +19,25 @@ namespace WpfControls
         public ObservableCollection<Product> Products { get; set; }
         public MainWindowViewModel()
         {
-            Products = new ObservableCollection<Product>(ProductFactory.GetProducts(500));
+            RecordCount = DataSource.Products.Count;
+            Products = new ObservableCollection<Product>(DataSource.Products.OrderBy(p => p.Id).Skip(0).Take(20));
+            //Messenger.Default.Register<int>(this, pageindex =>
+            //{
+            //    Products = new ObservableCollection<Product>(DataSource.Products.OrderBy(p=>p.ProductName).Skip(pageindex * 20).Take(20));
+            //});
+        }
+       
+        private int recordCount;
+        public int RecordCount
+        {
+            get { return recordCount; }
+            set
+            {
+                if (recordCount == value)
+                    return;
+                recordCount = value;
+                RaisePropertyChanged(() => RecordCount);
+            }
         }
 
 

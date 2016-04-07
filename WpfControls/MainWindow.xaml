@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:WpfControls"
         xmlns:control="clr-namespace:XSWPFControls;assembly=XSWPFControls"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        Title="MainWindow" Height="350" Width="525" WindowState="Maximized">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition/>
@@ -17,12 +17,14 @@
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Orientation="Horizontal">
-                        <TextBlock Text="{Binding ProductName}" MinWidth="200"/>
+                        <TextBlock Text="{Binding Id}" MinWidth="300"/>
+                        <TextBlock Text="{Binding ProductName}" MinWidth="300"/>
                         <TextBlock Text="{Binding Price}"/>
                     </StackPanel>
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
-        <control:Pager x:Name="MainPager" Grid.Row="1"/>
+        <control:Pager x:Name="MainPager" Grid.Row="1" PageSize="10" RecordCount="{Binding RecordCount}"
+                      />
     </Grid>
 </Window>

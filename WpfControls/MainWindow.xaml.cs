@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GalaSoft.MvvmLight.Messaging;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -24,6 +25,12 @@ namespace WpfControls
         {
             InitializeComponent();
             this.DataContext = new MainWindowViewModel();
+        }
+
+        private void MainPager_PageIndexChanged(object sender, RoutedPropertyChangedEventArgs<int> e)
+        {
+            int pageindex =(int) e.NewValue;
+            Messenger.Default.Send<int>(pageindex);
         }
     }
 }
