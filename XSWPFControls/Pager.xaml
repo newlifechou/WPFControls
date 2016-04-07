@@ -4,9 +4,19 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:XSWPFControls"
-             mc:Ignorable="d" 
-             d:DesignHeight="300" d:DesignWidth="300">
-    <StackPanel>
-            
+             mc:Ignorable="d" d:DesignWidth="300">
+    <UserControl.Resources>
+        <Style TargetType="Button">
+            <Setter Property="Margin" Value="2"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+        </Style>
+    </UserControl.Resources>
+    <StackPanel Orientation="Horizontal">
+        <Button x:Name="btnFirst" Content="First" Click="btnFirst_Click"/>
+        <Button x:Name="btnPrev" Content="Prev" Click="btnPrev_Click"/>
+        <TextBox x:Name="txtPageIndex" Text="1" IsReadOnly="True" Margin="2"
+                 VerticalAlignment="Center" HorizontalContentAlignment="Center" MinWidth="80"/>
+        <Button x:Name="btnNext" Content="Next" Click="btnNext_Click"/>
+        <Button x:Name="btnLast" Content="Last" Click="btnLast_Click"/>
     </StackPanel>
 </UserControl>
