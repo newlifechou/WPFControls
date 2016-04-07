@@ -16,9 +16,6 @@ namespace WpfControls.Model
         public static List<Product> GetProducts(int count)
         {
             SoftwareCreator creator = new SoftwareCreator();
-            //SampleDataFactory factory = new SampleDataFactory();
-            //List<string> productNames = factory.GetSampleData(creator, count);
-            Random r = new Random();
 
             List <Product> results = new List<Product>();
             for (int i = 0; i < count; i++)
@@ -27,7 +24,7 @@ namespace WpfControls.Model
                 {
                     Id = Guid.NewGuid(),
                     ProductName = creator.Create(),
-                    Price=r.Next(1000,9999)
+                    Price = Common.RandInt(1000, 9999)
 
                 };
                 results.Add(p);
