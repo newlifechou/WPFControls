@@ -28,16 +28,9 @@ namespace XSWPFControls
         #region Property
         public static DependencyProperty PageIndexProperty;
         public static DependencyProperty PageSizeProperty;
-        public static DependencyProperty TotalPageProperty;
-        static Pager()
-        {
-            PageIndexProperty = DependencyProperty.Register("PageIndex", typeof(int), typeof(Pager), null);
-            PageSizeProperty = DependencyProperty.Register("PageSize", typeof(int), typeof(Pager), null);
-            TotalPageProperty = DependencyProperty.Register("TotalPage", typeof(int), typeof(Pager), null);
+        public static DependencyProperty PageCountProperty;
+        public static DependencyProperty RecordCountProperty;
 
-
-
-        }
 
         public int PageIndex
         {
@@ -47,10 +40,10 @@ namespace XSWPFControls
             }
             set
             {
-                SetValue(PageIndexProperty,value);
+                SetValue(PageIndexProperty, value);
             }
         }
-        
+
         public int PageSize
         {
             get
@@ -63,24 +56,51 @@ namespace XSWPFControls
             }
         }
 
-        public int TotalPage
+        public int PageCount
         {
             get
             {
-                return (int)GetValue(TotalPageProperty);
+                return (int)GetValue(PageCountProperty);
             }
             set
             {
-                SetValue(TotalPageProperty, value);
+                SetValue(PageCountProperty, value);
+            }
+        }
+
+        public int RecordCount
+        {
+            get
+            {
+                return (int)GetValue(RecordCountProperty);
+            }
+            set
+            {
+                SetValue(RecordCountProperty, value);
             }
         }
 
         #endregion
 
         #region Event
+        public static readonly RoutedEvent PageIndexChangedEvent;
+        public event RoutedPropertyChangedEventHandler<int> PageIndexChanged
+        {
+            add { AddHandler(PageIndexChangedEvent, value); }
+            remove { RemoveHandler(PageIndexChangedEvent, value); }
+        }
 
         #endregion
+        static Pager()
+        {
+            PageIndexProperty = DependencyProperty.Register("PageIndex", typeof(int), typeof(Pager), null);
+            PageSizeProperty = DependencyProperty.Register("PageSize", typeof(int), typeof(Pager), null);
+            PageCountProperty = DependencyProperty.Register("PageCount", typeof(int), typeof(Pager), null);
+            RecordCountProperty = DependencyProperty.Register("RecordCount", typeof(int), typeof(Pager), null);
 
+            PageIndexChangedEvent = EventManager.RegisterRoutedEvent("PageIndexChanged", RoutingStrategy.Bubble, 
+                typeof(RoutedPropertyChangedEventArgs<int>), typeof(Pager));
+        }
 
     }
 }
