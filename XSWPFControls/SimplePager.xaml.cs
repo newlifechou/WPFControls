@@ -20,13 +20,9 @@ namespace XSWPFControls
     /// </summary>
     public partial class SimplePager : UserControl
     {
-        public SimplePagerViewModel SimplePagerVM { get; set; }
         public SimplePager()
         {
             InitializeComponent();
-            SimplePagerVM = new SimplePagerViewModel();
-
-            this.DataContext = SimplePagerVM;
         }
     }
 }
