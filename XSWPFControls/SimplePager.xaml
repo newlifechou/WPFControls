@@ -1,0 +1,30 @@
+﻿<UserControl x:Class="XSWPFControls.SimplePager"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:XSWPFControls"
+             mc:Ignorable="d" 
+             d:DesignWidth="300">
+    <UserControl.Resources>
+        <Style TargetType="Image">
+            <Setter Property="Height" Value="25"/>
+            <Setter Property="Width" Value="25"/>
+        </Style>
+    </UserControl.Resources>
+    <StackPanel Orientation="Horizontal">
+        <Button x:Name="btnFirst" >
+            <Image Source="Images/first.png"/>
+        </Button>
+        <Button x:Name="btnPrev" >
+            <Image Source="Images/first.png"/>
+        </Button>
+        <TextBox x:Name="txtPageIndex" Text="1" Width="50"  HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        <Button x:Name="btnNext" >
+            <Image Source="Images/first.png"/>
+        </Button>
+        <Button x:Name="btnLast" >
+            <Image Source="Images/first.png"/>
+        </Button>
+    </StackPanel>
+</UserControl>

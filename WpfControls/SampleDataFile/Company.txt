@@ -1,0 +1,14 @@
+﻿Microsoft
+IBM
+Apple
+HP
+Dell
+Lenovo
+Google
+Oracle
+Tencent
+Cisco
+Autodesk
+Alibaba
+Baidu
+Google

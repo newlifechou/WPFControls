@@ -1,0 +1,7 @@
+﻿Database
+Office
+IDE
+Editor
+Design
+Tool
+Web

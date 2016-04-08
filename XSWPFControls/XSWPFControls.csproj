@@ -48,6 +48,10 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="SimplePager.xaml.cs">
+      <DependentUpon>SimplePager.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SimplePagerViewModel.cs" />
     <Page Include="Pager.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -56,6 +60,10 @@
       <DependentUpon>Pager.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="SimplePager.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -81,7 +89,12 @@
     </None>
     <AppDesigner Include="Properties\" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Images\prev.png" />
+    <Resource Include="Images\next.png" />
+    <Resource Include="Images\first.png" />
+    <Resource Include="Images\last.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

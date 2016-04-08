@@ -1,0 +1,28 @@
+﻿Photoshop
+DreamWeaver
+Word
+Excel
+Powerpoint
+Visio
+Visual Studio
+Sql Server
+Chrome
+Egde
+Flash FTP
+Blend
+Design
+Onenote
+Evernote
+CPU
+MySQL
+SQLite
+HTML
+CSS
+Javascript
+Outlook
+Teamviewer
+QQ
+Aliwangwang
+Xmind
+WeChat
+Facebook
