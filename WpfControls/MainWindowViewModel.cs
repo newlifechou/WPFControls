@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using WpfControls.Model;
+using XSWPFControls;
 
 /*
     Developer:xs.zhou@outlook.com
@@ -16,27 +17,45 @@ namespace WpfControls
 {
     public class MainWindowViewModel:ViewModelBase
     {
-        public ObservableCollection<Product> Products { get; set; }
-        public MainWindowViewModel()
+        
+        public MainWindowViewModel(SimplePagerViewModel vm)
         {
-            RecordCount = DataSource.Products.Count;
-            Products = new ObservableCollection<Product>(DataSource.Products.OrderBy(p => p.Id).Skip(0).Take(20));
-            //Messenger.Default.Register<int>(this, pageindex =>
-            //{
-            //    Products = new ObservableCollection<Product>(DataSource.Products.OrderBy(p=>p.ProductName).Skip(pageindex * 20).Take(20));
-            //});
+            Messenger.Default.Register<int>(this, "PageChangedMessenge", i =>
+            {
+                Products = new ObservableCollection<Product>(DataSource.Products.OrderBy(p => p.Price).Skip(i).Take(20));
+            });
+
+            int recordCount = DataSource.Products.Count;
+            vm.RecordCount = recordCount;
+            vm.PageSize = 20;
+            vm.PageIndexChangedMessage();
+
         }
-       
-        private int recordCount;
-        public int RecordCount
+
+        private ObservableCollection<Product> products;
+        public ObservableCollection<Product>  Products
         {
-            get { return recordCount; }
+            get { return products; }
             set
             {
-                if (recordCount == value)
+                if (products == value)
                     return;
-                recordCount = value;
-                RaisePropertyChanged(() => RecordCount);
+                products = value;
+                RaisePropertyChanged(() => Products);
+            }
+        }
+
+
+        private int indexCounter;
+        public int IndexCounter
+        {
+            get { return indexCounter; }
+            set
+            {
+                if (indexCounter == value)
+                    return;
+                indexCounter = value;
+                RaisePropertyChanged(() => IndexCounter);
             }
         }
 

@@ -13,18 +13,20 @@
         </Style>
     </UserControl.Resources>
     <StackPanel Orientation="Horizontal">
-        <Button x:Name="btnFirst" >
+        <Button x:Name="btnFirst"  Command="{Binding FirstCommand}">
             <Image Source="Images/first.png"/>
         </Button>
-        <Button x:Name="btnPrev" >
-            <Image Source="Images/first.png"/>
+        <Button x:Name="btnPrev" Command="{Binding PrevCommand}" >
+            <Image Source="Images/prev.png"/>
         </Button>
-        <TextBox x:Name="txtPageIndex" Text="1" Width="50"  HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-        <Button x:Name="btnNext" >
-            <Image Source="Images/first.png"/>
+        <TextBox x:Name="txtPageIndex" Text="{Binding PageIndex}" Width="50" IsReadOnly="True"
+                 HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        <Button x:Name="btnNext" Command="{Binding NextCommand}">
+            <Image Source="Images/next.png"/>
         </Button>
-        <Button x:Name="btnLast" >
-            <Image Source="Images/first.png"/>
+        <Button x:Name="btnLast" Command="{Binding LastCommand}">
+            <Image Source="Images/last.png"/>
         </Button>
+        <TextBox x:Name="txtPageCount" Text="{Binding PageCount}" Width="50" IsReadOnly="True" HorizontalAlignment="Center" VerticalContentAlignment="Center"/>
     </StackPanel>
 </UserControl>

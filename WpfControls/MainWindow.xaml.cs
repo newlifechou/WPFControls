@@ -13,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using XSWPFControls;
 
 namespace WpfControls
 {
@@ -24,13 +25,10 @@ namespace WpfControls
         public MainWindow()
         {
             InitializeComponent();
-            this.DataContext = new MainWindowViewModel();
-        }
-
-        private void MainPager_PageIndexChanged(object sender, RoutedPropertyChangedEventArgs<int> e)
-        {
-            int pageindex =(int) e.NewValue;
-            Messenger.Default.Send<int>(pageindex);
+            SimplePagerViewModel ucviewmodel = new SimplePagerViewModel();
+            MainWindowViewModel viewmodel = new MainWindowViewModel(ucviewmodel);
+            pager.DataContext = ucviewmodel;
+            this.DataContext = viewmodel;
         }
     }
 }

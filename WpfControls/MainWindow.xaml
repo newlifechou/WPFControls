@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:WpfControls"
         xmlns:control="clr-namespace:XSWPFControls;assembly=XSWPFControls"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525" WindowState="Maximized">
+        Title="{Binding IndexCounter}" Height="350" Width="525" WindowState="Maximized">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition/>
@@ -24,7 +24,6 @@
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
-        <control:Pager x:Name="MainPager" Grid.Row="1" PageSize="10" RecordCount="{Binding RecordCount}"
-                      />
+        <control:SimplePager x:Name="pager" Grid.Row="1" DataContext="{Binding SimplePageVM}"/>
     </Grid>
 </Window>
