@@ -4,7 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfControls"
-        xmlns:control="clr-namespace:XSWPFControls;assembly=XSWPFControls"
+        xmlns:control="clr-namespace:XS.WPFControls;assembly=XS.WPFControls"
         mc:Ignorable="d"
         Title="{Binding IndexCounter}" Height="350" Width="525" WindowState="Maximized">
     <Grid>
@@ -24,6 +24,8 @@
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
-        <control:SimplePager x:Name="pager" Grid.Row="1" DataContext="{Binding SimplePageVM}"/>
+        <control:SimplePager x:Name="pager" Grid.Row="1" PageIndex="{Binding PageIndex,Mode=TwoWay}" 
+                             PageCount="{Binding PageCount,Mode=TwoWay}" PageSize="{Binding PageSize,Mode=OneWay}"
+                             RecordCount="{Binding RecordCount,Mode=OneWay}" Command="{Binding PageCommand}"/>
     </Grid>
 </Window>

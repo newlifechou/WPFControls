@@ -13,7 +13,6 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using XSWPFControls;
 
 namespace WpfControls
 {
@@ -25,9 +24,7 @@ namespace WpfControls
         public MainWindow()
         {
             InitializeComponent();
-            SimplePagerViewModel ucviewmodel = new SimplePagerViewModel();
-            MainWindowViewModel viewmodel = new MainWindowViewModel(ucviewmodel);
-            pager.DataContext = ucviewmodel;
+            MainWindowViewModel viewmodel = new MainWindowViewModel();
             this.DataContext = viewmodel;
         }
     }

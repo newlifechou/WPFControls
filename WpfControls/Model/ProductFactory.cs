@@ -22,7 +22,7 @@ namespace WpfControls.Model
             {
                 Product p = new Product()
                 {
-                    Id = Guid.NewGuid(),
+                    Id = i,
                     ProductName = creator.Create(),
                     Price = Common.RandInt(1000, 9999)
 
