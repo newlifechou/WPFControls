@@ -26,6 +26,7 @@
         </ListBox>
         <control:SimplePager x:Name="pager" Grid.Row="1" PageIndex="{Binding PageIndex,Mode=TwoWay}" 
                              PageCount="{Binding PageCount,Mode=TwoWay}" PageSize="{Binding PageSize,Mode=OneWay}"
-                             RecordCount="{Binding RecordCount,Mode=OneWay}" Command="{Binding PageCommand}"/>
+                             RecordCount="{Binding RecordCount,Mode=OneWay}" Command="{Binding PageCommand}"
+                             LabelPageIndex="当前页码" LabelPageCount="总页数" LabelPageSize="每页记录数" LabelRecordCount="总记录数"/>
     </Grid>
 </Window>

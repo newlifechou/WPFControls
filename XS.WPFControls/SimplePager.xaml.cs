@@ -170,7 +170,7 @@ namespace XS.WPFControls
 
         private void SetText()
         {
-            txtPageInformation.Text = $"PageIndex={PageIndex},PageCount={PageCount},PageSize={PageSize},RecordCount={RecordCount}";
+            txtPageInformation.Text = $"{LabelPageIndex}={PageIndex},{LabelPageCount}={PageCount},{LabelPageCount}={RecordCount},{LabelPageSize}={PageSize}";
             SetButton();
         }
         #endregion
@@ -264,5 +264,73 @@ namespace XS.WPFControls
             PageIndex = PageCount;
             OnCommandExecute();
         }
+
+        #region 标签属性，用于中英文内容设置
+
+        public string LabelPageIndex
+        {
+            get
+            {
+                return (string)GetValue(LabelPageIndexProperty);
+            }
+            set
+            {
+                SetValue(LabelPageIndexProperty, value);
+            }
+        }
+
+        public static readonly DependencyProperty LabelPageIndexProperty =
+              DependencyProperty.Register("LabelPageIndex", typeof(string), typeof(SimplePager), new PropertyMetadata("Current Page Index"));
+
+        public string LabelPageCount
+        {
+            get
+            {
+                return (string)GetValue(LabelPageCountProperty);
+            }
+            set
+            {
+                SetValue(LabelPageCountProperty, value);
+            }
+        }
+
+        public static readonly DependencyProperty LabelPageCountProperty =
+              DependencyProperty.Register("LabelPageCount", typeof(string), typeof(SimplePager), new PropertyMetadata("Total Pages"));
+
+
+        public string LabelRecordCount
+        {
+            get
+            {
+                return (string)GetValue(LabelRecordCountProperty);
+            }
+            set
+            {
+                SetValue(LabelRecordCountProperty, value);
+            }
+        }
+
+        public static readonly DependencyProperty LabelRecordCountProperty =
+              DependencyProperty.Register("LabelRecordCount", typeof(string), typeof(SimplePager), new PropertyMetadata("Total Record Count"));
+
+
+        public string LabelPageSize
+        {
+            get
+            {
+                return (string)GetValue(LabelPageSizeProperty);
+            }
+            set
+            {
+                SetValue(LabelPageSizeProperty, value);
+            }
+        }
+
+        public static readonly DependencyProperty LabelPageSizeProperty =
+              DependencyProperty.Register("LabelPageSize", typeof(string), typeof(SimplePager), new PropertyMetadata("Page Size"));
+
+        #endregion
+
+
     }
 }
