@@ -48,10 +48,17 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
+    <Page Include="BindableCSVTable.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="SimplePager.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Compile Include="BindableCSVTable.xaml.cs">
+      <DependentUpon>BindableCSVTable.xaml</DependentUpon>
+    </Compile>
     <Compile Include="SimplePager.xaml.cs">
       <DependentUpon>SimplePager.xaml</DependentUpon>
       <SubType>Code</SubType>
