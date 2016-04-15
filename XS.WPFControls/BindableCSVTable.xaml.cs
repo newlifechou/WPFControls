@@ -61,6 +61,7 @@ namespace XS.WPFControls
 
         private void CSVToTable(string csvString)
         {
+            ClearTable();
             if (string.IsNullOrEmpty(csvString))
             {
                 return;

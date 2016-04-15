@@ -7,7 +7,7 @@
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
     <Grid>
-        <RichTextBox>
+        <RichTextBox VerticalScrollBarVisibility="Visible" IsReadOnly="True">
             <RichTextBox.Document>
                 <FlowDocument>
                     <Table CellSpacing="0">
