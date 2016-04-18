@@ -170,7 +170,7 @@ namespace XS.WPFControls
 
         private void SetText()
         {
-            txtPageInformation.Text = $"{LabelPageIndex}={PageIndex},{LabelPageCount}={PageCount},{LabelPageCount}={RecordCount},{LabelPageSize}={PageSize}";
+            txtPageInformation.Text = $"{LabelPageIndex}={PageIndex},{LabelPageCount}={PageCount},{LabelRecordCount}={RecordCount},{LabelPageSize}={PageSize}";
             SetButton();
         }
         #endregion

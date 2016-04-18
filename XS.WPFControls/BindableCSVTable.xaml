@@ -10,7 +10,7 @@
         <RichTextBox VerticalScrollBarVisibility="Visible" IsReadOnly="True">
             <RichTextBox.Document>
                 <FlowDocument>
-                    <Table CellSpacing="0" BorderBrush="Blue" BorderThickness="0.5">
+                    <Table CellSpacing="0" BorderBrush="Blue" BorderThickness="0.5" Margin="5">
                         <TableRowGroup x:Name="tableRowGroup">
                             
                         </TableRowGroup>
