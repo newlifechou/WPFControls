@@ -66,14 +66,12 @@ namespace XS.WPFControls
             {
                 return;
             }
-            string[] lines = CSVContent.Split(new char[] { '\n', '\r' });
+            string[] lines = CSVContent.Split(new string[] { "\r\n" }, StringSplitOptions.RemoveEmptyEntries);
             foreach (var line in lines)
             {
                 TableRow row = new TableRow();
                 foreach (var item in line.Split(new char[] { ','}))
                 {
-                    if (!string.IsNullOrEmpty(item))
-                    {
                         TableCell cell = new TableCell();
                         cell.BorderBrush = Brushes.Blue;
                         cell.BorderThickness = new Thickness(1);
@@ -81,7 +79,6 @@ namespace XS.WPFControls
                         p.Inlines.Add(item);
                         cell.Blocks.Add(p);
                         row.Cells.Add(cell);
-                    }
                 }
                 this.tableRowGroup.Rows.Add(row);
             }
