@@ -51,37 +51,64 @@ namespace XS.WPFControls
             }
             else
             {
-                table.ClearTable();
+                table.ClearDoc();
             }
         }
-        private void ClearTable()
+        private void ClearDoc()
         {
-            this.tableRowGroup.Rows.Clear();
+            this.doc.Blocks.Clear();
         }
 
         private void CSVToTable(string csvString)
         {
-            ClearTable();
+            ClearDoc();
             if (string.IsNullOrEmpty(csvString))
             {
                 return;
             }
+
             string[] lines = CSVContent.Split(new string[] { "\r\n" }, StringSplitOptions.RemoveEmptyEntries);
-            foreach (var line in lines)
+
+            if (lines.Count()<2)
             {
-                TableRow row = new TableRow();
-                foreach (var item in line.Split(new char[] { ','}))
+                Paragraph p1 = new Paragraph();
+                p1.Inlines.Add(new Run(lines[0]));
+                p1.Foreground = Brushes.Blue;
+                p1.Margin = new Thickness(5);
+                doc.Blocks.Add(p1);
+                return;
+            }
+            else
+            {
+                Table table = new Table();
+                table.CellSpacing = 0;
+                table.BorderBrush = Brushes.Blue;
+                table.BorderThickness = new Thickness(0.5);
+                table.Margin = new Thickness(5);
+                table.RowGroups.Add(new TableRowGroup());
+
+                foreach (var line in lines)
                 {
+                    TableRow row = new TableRow();
+                    foreach (var item in line.Split(new char[] { ',' }))
+                    {
                         TableCell cell = new TableCell();
                         cell.BorderBrush = Brushes.Blue;
-                        cell.BorderThickness = new Thickness(1);
+                        cell.BorderThickness = new Thickness(0.5);
                         Paragraph p = new Paragraph();
                         p.Inlines.Add(item);
                         cell.Blocks.Add(p);
                         row.Cells.Add(cell);
+                    }
+                    table.RowGroups[0].Rows.Add(row);
                 }
-                this.tableRowGroup.Rows.Add(row);
+                Paragraph p2 = new Paragraph(new Run("成分测试结果"));
+                p2.Foreground = Brushes.Blue;
+                p2.Margin = new Thickness(5);
+                doc.Blocks.Add(p2);
+                doc.Blocks.Add(table);
             }
+
         }
 
 
