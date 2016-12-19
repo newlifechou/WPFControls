@@ -1,11 +1,15 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.24720.0
+VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfControls", "WpfControls\WpfControls.csproj", "{5EB87028-2951-4869-80D0-1E80657966C3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfSkin", "WPFSkin\WpfSkin.csproj", "{DE3A1FC9-D00D-4E0F-9346-15502342ED76}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XS.WPFControls", "XS.WPFControls\XS.WPFControls.csproj", "{B34D1E0A-02B9-4512-A07F-0603AD29AD3A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfValidationRule", "WPFValidationRule\WpfValidationRule.csproj", "{0332B1E1-BE6E-4CE7-BCC6-5045DE2AC223}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WPFControls", "WPFControls\WPFControls.csproj", "{B34D1E0A-02B9-4512-A07F-0603AD29AD3A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfControlsTest", "WPFControlsTest\WpfControlsTest.csproj", "{5EB87028-2951-4869-80D0-1E80657966C3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -13,14 +17,22 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{5EB87028-2951-4869-80D0-1E80657966C3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5EB87028-2951-4869-80D0-1E80657966C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5EB87028-2951-4869-80D0-1E80657966C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5EB87028-2951-4869-80D0-1E80657966C3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DE3A1FC9-D00D-4E0F-9346-15502342ED76}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DE3A1FC9-D00D-4E0F-9346-15502342ED76}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DE3A1FC9-D00D-4E0F-9346-15502342ED76}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DE3A1FC9-D00D-4E0F-9346-15502342ED76}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0332B1E1-BE6E-4CE7-BCC6-5045DE2AC223}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0332B1E1-BE6E-4CE7-BCC6-5045DE2AC223}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0332B1E1-BE6E-4CE7-BCC6-5045DE2AC223}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0332B1E1-BE6E-4CE7-BCC6-5045DE2AC223}.Release|Any CPU.Build.0 = Release|Any CPU
 		{B34D1E0A-02B9-4512-A07F-0603AD29AD3A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{B34D1E0A-02B9-4512-A07F-0603AD29AD3A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B34D1E0A-02B9-4512-A07F-0603AD29AD3A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B34D1E0A-02B9-4512-A07F-0603AD29AD3A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5EB87028-2951-4869-80D0-1E80657966C3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5EB87028-2951-4869-80D0-1E80657966C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5EB87028-2951-4869-80D0-1E80657966C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5EB87028-2951-4869-80D0-1E80657966C3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
