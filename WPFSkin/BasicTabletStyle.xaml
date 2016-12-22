@@ -7,9 +7,10 @@
     </Style>
     <Style x:Key="ButtonBasic" TargetType="Button">
         <Setter Property="Margin" Value="5"/>
-        <Setter Property="Padding" Value="3"/>
+        <Setter Property="Padding" Value="15 3"/>
         <Setter Property="MinWidth" Value="80"/>
-        <Setter Property="Height" Value="40"/>
+        <Setter Property="Height" Value="50"/>
+        <Setter Property="FontSize" Value="20"/>
     </Style>
     <Style x:Key="ButtonDataGrid" TargetType="Button">
         <Setter Property="Margin" Value="2"/>
@@ -28,7 +29,14 @@
         <Setter Property="HorizontalAlignment" Value="Left"/>
         <Setter Property="VerticalAlignment" Value="Center"/>
     </Style>
-
+    <Style x:Key="TextBlockPageTitle" TargetType="TextBlock">
+        <Setter Property="Margin" Value="5"/>
+        <Setter Property="Padding" Value="3"/>
+        <Setter Property="HorizontalAlignment" Value="Left"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="FontSize" Value="25"/>
+        <Setter Property="FontWeight" Value="Bold"/>
+    </Style>
     <Style x:Key="TextBoxBasic" TargetType="TextBox">
         <Setter Property="Margin" Value="5"/>
         <Setter Property="Padding" Value="3"/>
@@ -37,6 +45,7 @@
         <Setter Property="VerticalAlignment" Value="Center"/>
         <Setter Property="MinWidth" Value="80"/>
         <Setter Property="Height" Value="40"/>
+        <Setter Property="FontSize" Value="20"/>
     </Style>
     <Style x:Key="TextBoxBasicBold" BasedOn="{StaticResource TextBoxBasic}"  TargetType="TextBox">
         <Setter Property="FontWeight" Value="Bold"/>
@@ -74,5 +83,8 @@
         <Setter Property="Margin" Value="5"/>
         <Setter Property="HorizontalAlignment" Value="Left"/>
         <Setter Property="VerticalAlignment" Value="Center"/>
+    </Style>
+    <Style x:Key="ListBoxBasic" TargetType="ListBox">
+        <Setter Property="Margin" Value="5"/>
     </Style>
 </ResourceDictionary>
