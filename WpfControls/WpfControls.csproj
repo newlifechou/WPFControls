@@ -49,6 +49,9 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="StandardViewFrame.xaml.cs">
+      <DependentUpon>StandardViewFrame.xaml</DependentUpon>
+    </Compile>
     <Page Include="BindableCSVTable.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -64,6 +67,10 @@
       <DependentUpon>SimplePager.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="StandardViewFrame.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
