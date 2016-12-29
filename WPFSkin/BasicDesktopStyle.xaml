@@ -17,10 +17,10 @@
     </Style>
     <Style x:Key="ButtonBasicNavigation" TargetType="Button">
         <Setter Property="Margin" Value="5"/>
-        <Setter Property="Padding" Value="3"/>
+        <Setter Property="Padding" Value="5 10"/>
         <Setter Property="MinWidth" Value="120"/>
     </Style>
-    <Style x:Key="TextblockBasic" TargetType="TextBlock">
+    <Style x:Key="TextBlockBasic" TargetType="TextBlock">
         <Setter Property="Margin" Value="5"/>
         <Setter Property="Padding" Value="3"/>
         <Setter Property="HorizontalAlignment" Value="Left"/>
@@ -31,7 +31,7 @@
         <Setter Property="Padding" Value="3"/>
         <Setter Property="HorizontalAlignment" Value="Left"/>
         <Setter Property="VerticalAlignment" Value="Center"/>
-        <Setter Property="FontSize" Value="20"/>
+        <Setter Property="FontSize" Value="15"/>
         <Setter Property="FontWeight" Value="Bold"/>
     </Style>
     <Style x:Key="TextBoxBasic" TargetType="TextBox">
@@ -74,5 +74,8 @@
         <Setter Property="Margin" Value="5"/>
         <Setter Property="HorizontalAlignment" Value="Left"/>
         <Setter Property="VerticalAlignment" Value="Center"/>
+    </Style>
+    <Style x:Key="ListBoxBasic" TargetType="ListBox">
+        <Setter Property="Margin" Value="5"/>
     </Style>
 </ResourceDictionary>
