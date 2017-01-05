@@ -18,14 +18,67 @@
         <Setter Property="Margin" Value="{StaticResource ThicknessMedium}"/>
         <Setter Property="Padding" Value="{StaticResource ThicknessMedium}"/>
         <Setter Property="HorizontalAlignment" Value="Left"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="MinWidth" Value="80"/>
     </Style>
-    <Style x:Key="TextBlockBasic"></Style>
-    <Style x:Key="TextBoxBasic"></Style>
-    <Style x:Key="TextBoxMultilineBasic"></Style>
-    <Style x:Key="CheckBoxBasic"></Style>
-    <Style x:Key="RadioButtonBasic"></Style>
-    <Style x:Key="ListBoxBasic"></Style>
-    <Style x:Key="DataGridBasic"></Style>
-    <Style x:Key="ComboBoxBasic"></Style>
-    <Style x:Key="DatePickerBasic"></Style>
+    
+    <Style x:Key="TextBlockBasic" TargetType="TextBlock">
+        <Setter Property="Margin" Value="{StaticResource ThicknessMedium}"/>
+        <Setter Property="Padding" Value="{StaticResource ThicknessMedium}"/>
+        <Setter Property="HorizontalAlignment" Value="Left"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="MinWidth" Value="80"/>
+    </Style>
+    <Style x:Key="TextBlockPageTitleBasic" TargetType="TextBlock" BasedOn="{StaticResource TextBlockBasic}">
+        <Setter Property="FontSize" Value="{StaticResource Medium}"/>
+    </Style>
+    <Style x:Key="TextBoxBasic" TargetType="TextBox">
+        <Setter Property="Margin" Value="{StaticResource ThicknessMedium}"/>
+        <Setter Property="Padding" Value="{StaticResource ThicknessMedium}"/>
+        <Setter Property="HorizontalAlignment" Value="Left"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="MinWidth" Value="80"/>
+    </Style>
+    <Style x:Key="TextBoxMultilineBasic" TargetType="TextBox" BasedOn="{StaticResource TextBoxBasic}">
+        <Setter Property="AcceptsReturn" Value="True"/>
+        <Setter Property="MinHeight" Value="50"/>
+    </Style>
+    <Style x:Key="CheckBoxBasic" TargetType="CheckBox">
+        <Setter Property="Margin" Value="{StaticResource ThicknessMedium}"/>
+        <Setter Property="Padding" Value="{StaticResource ThicknessMedium}"/>
+        <Setter Property="HorizontalAlignment" Value="Left"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="MinWidth" Value="80"/>
+    </Style>
+    <Style x:Key="RadioButtonBasic" TargetType="RadioButton">
+        <Setter Property="Margin" Value="{StaticResource ThicknessMedium}"/>
+        <Setter Property="Padding" Value="{StaticResource ThicknessMedium}"/>
+        <Setter Property="HorizontalAlignment" Value="Left"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="MinWidth" Value="80"/>
+    </Style>
+    <Style x:Key="ComboBoxBasic" TargetType="ComboBox">
+        <Setter Property="Margin" Value="{StaticResource ThicknessMedium}"/>
+        <Setter Property="HorizontalAlignment" Value="Left"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="MinWidth" Value="80"/>
+    </Style>
+    <Style x:Key="DatePickerBasic" TargetType="DatePicker">
+        <Setter Property="Margin" Value="{StaticResource ThicknessMedium}"/>
+        <Setter Property="HorizontalAlignment" Value="Left"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+    </Style>
+    <Style x:Key="ListBoxBasic" TargetType="ListBox">
+        <Setter Property="Margin" Value="{StaticResource ThicknessMedium}"/>
+    </Style>
+    <Style x:Key="DataGridBasic" TargetType="DataGrid">
+        <Setter Property="AutoGenerateColumns" Value="False"/>
+        <Setter Property="IsReadOnly" Value="True"/>
+        <Setter Property="HorizontalGridLinesBrush" Value="Wheat"/>
+        <Setter Property="SelectionMode" Value="Single"/>
+        <Setter Property="GridLinesVisibility" Value="Horizontal"/>
+    </Style>
+    
 </ResourceDictionary>
