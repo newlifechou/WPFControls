@@ -13,6 +13,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfControlsTest", "WPFContr
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WPFNavigationBaseOnMvvmlight", "WPFNavigationBaseOnMvvmlight\WPFNavigationBaseOnMvvmlight.csproj", "{409C3514-9F43-49EC-AE38-E45E1F890CD3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WPFStyle46", "WPFStyle46\WPFStyle46.csproj", "{FE4D5808-89B9-42A3-8B56-99C33573A935}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WPFStyle46Test", "WPFStyle46Test\WPFStyle46Test.csproj", "{29BDDB39-F9E8-4575-931D-C1F307178DCE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +43,14 @@ Global
 		{409C3514-9F43-49EC-AE38-E45E1F890CD3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{409C3514-9F43-49EC-AE38-E45E1F890CD3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{409C3514-9F43-49EC-AE38-E45E1F890CD3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FE4D5808-89B9-42A3-8B56-99C33573A935}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FE4D5808-89B9-42A3-8B56-99C33573A935}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FE4D5808-89B9-42A3-8B56-99C33573A935}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FE4D5808-89B9-42A3-8B56-99C33573A935}.Release|Any CPU.Build.0 = Release|Any CPU
+		{29BDDB39-F9E8-4575-931D-C1F307178DCE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{29BDDB39-F9E8-4575-931D-C1F307178DCE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{29BDDB39-F9E8-4575-931D-C1F307178DCE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{29BDDB39-F9E8-4575-931D-C1F307178DCE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
