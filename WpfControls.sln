@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfSkin", "WPFSkin\WpfSkin.csproj", "{DE3A1FC9-D00D-4E0F-9346-15502342ED76}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfSkin.Obsolete", "WPFSkin\WpfSkin.Obsolete.csproj", "{DE3A1FC9-D00D-4E0F-9346-15502342ED76}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfValidationRule", "WPFValidationRule\WpfValidationRule.csproj", "{0332B1E1-BE6E-4CE7-BCC6-5045DE2AC223}"
 EndProject
