@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WPFStyle46", "WPFStyle46\WP
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WPFStyle46Test", "WPFStyle46Test\WPFStyle46Test.csproj", "{29BDDB39-F9E8-4575-931D-C1F307178DCE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BindableCSVTableTest", "BindableCSVTableTest\BindableCSVTableTest.csproj", "{B6C36EE3-F56A-4394-83DE-CEB205AA6262}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +53,10 @@ Global
 		{29BDDB39-F9E8-4575-931D-C1F307178DCE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{29BDDB39-F9E8-4575-931D-C1F307178DCE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{29BDDB39-F9E8-4575-931D-C1F307178DCE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B6C36EE3-F56A-4394-83DE-CEB205AA6262}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B6C36EE3-F56A-4394-83DE-CEB205AA6262}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B6C36EE3-F56A-4394-83DE-CEB205AA6262}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B6C36EE3-F56A-4394-83DE-CEB205AA6262}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
