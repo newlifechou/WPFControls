@@ -5,16 +5,16 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:WPFControls"
              mc:Ignorable="d" 
-             d:DesignHeight="300" d:DesignWidth="300">
+             d:DesignHeight="300" d:DesignWidth="500">
     <Grid>
         <RichTextBox VerticalScrollBarVisibility="Visible" IsReadOnly="True">
             <RichTextBox.Document>
                 <FlowDocument x:Name="doc">
-                    <Table CellSpacing="0" BorderBrush="Blue" BorderThickness="0.5" Margin="5">
+                    <!--<Table CellSpacing="0" BorderBrush="Blue" BorderThickness="0.5" Margin="5">
                         <TableRowGroup x:Name="tableRowGroup">
                             
                         </TableRowGroup>
-                    </Table>
+                    </Table>-->
                 </FlowDocument>
             </RichTextBox.Document>
         </RichTextBox>
