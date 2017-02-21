@@ -22,7 +22,6 @@
         <Setter Property="MinWidth" Value="80"/>
     </Style>
     <Style x:Key="ButtonDGBasic" TargetType="Button">
-        <Setter Property="Margin" Value="{StaticResource ThicknessSmall}"/>
         <Setter Property="Padding" Value="{StaticResource ThicknessSmall}"/>
         <Setter Property="HorizontalAlignment" Value="Left"/>
         <Setter Property="VerticalAlignment" Value="Center"/>
@@ -44,7 +43,6 @@
         <!--<Setter Property="MinWidth" Value="80"/>-->
     </Style>
     <Style x:Key="TextBlockDGBasic" TargetType="TextBlock">
-        <Setter Property="Margin" Value="{StaticResource ThicknessSmall}"/> 
         <Setter Property="Padding" Value="{StaticResource ThicknessSmall}"/>
         <Setter Property="VerticalAlignment" Value="Center"/>
     </Style>
@@ -99,6 +97,8 @@
         <Setter Property="HorizontalGridLinesBrush" Value="Wheat"/>
         <Setter Property="SelectionMode" Value="Single"/>
         <Setter Property="GridLinesVisibility" Value="Horizontal"/>
+        <Setter Property="CanUserSortColumns" Value="False"/>
+        <Setter Property="CanUserReorderColumns" Value="False"/>
     </Style>
     
 </ResourceDictionary>
