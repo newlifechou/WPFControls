@@ -49,9 +49,16 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AutoCompleteTextBox.xaml.cs">
+      <DependentUpon>AutoCompleteTextBox.xaml</DependentUpon>
+    </Compile>
     <Compile Include="StandardViewFrame.xaml.cs">
       <DependentUpon>StandardViewFrame.xaml</DependentUpon>
     </Compile>
+    <Page Include="AutoCompleteTextBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="BindableCSVTable.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
