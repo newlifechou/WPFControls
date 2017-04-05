@@ -12,7 +12,8 @@
             <RowDefinition/>
         </Grid.RowDefinitions>
         <TextBox x:Name="txt" GotFocus="txt_GotFocus" LostFocus="txt_LostFocus"/>
-        <Popup x:Name="pop" Placement="Bottom" PlacementTarget="{Binding ElementName=txt}">
+        <Popup x:Name="pop" Placement="Bottom" PlacementTarget="{Binding ElementName=txt}"
+               Width="{Binding ElementName=txt,Path=ActualWidth}">
             <ListBox x:Name="lst" SelectionChanged="lst_SelectionChanged"/>
         </Popup>
     </Grid>

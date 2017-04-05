@@ -14,7 +14,7 @@ namespace WpfControlsTest.Model
     {
         static DataSource()
         {
-            Products = ProductFactory.GetProducts(500);
+            //Products = ProductFactory.GetProducts(500);
         }
         public static  List<Product> Products { get; set; }
     }

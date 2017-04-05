@@ -28,6 +28,7 @@ namespace WPFControls
 
         private void lst_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            Text = lst.SelectedItem.ToString();
             pop.IsOpen = false;
         }
 
@@ -55,7 +56,12 @@ namespace WPFControls
 
         private static void OnTextChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
-            throw new NotImplementedException();
+            AutoCompleteTextBox control = d as AutoCompleteTextBox;
+            TextBox txt = control.txt;
+            if (e.NewValue!=e.OldValue)
+            {
+                txt.Text = e.NewValue.ToString();
+            }
         }
 
 
@@ -74,7 +80,12 @@ namespace WPFControls
 
         private static void OnSelectionDsChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
-            throw new NotImplementedException();
+            AutoCompleteTextBox control = d as AutoCompleteTextBox;
+            ListBox lst = control.lst;
+            if (e.NewValue!=e.OldValue)
+            {
+                lst.ItemsSource = e.NewValue as List<string>;
+            }
         }
     }
 }
