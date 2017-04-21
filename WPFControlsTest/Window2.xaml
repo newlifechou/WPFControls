@@ -1,0 +1,24 @@
+﻿<Window x:Class="WpfControlsTest.Window2"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfControlsTest"
+        mc:Ignorable="d"
+        xmlns:control="clr-namespace:WPFControls;assembly=WPFControls"
+        Title="Window2" Height="300" Width="600">
+    <Window.DataContext>
+        <local:Window2VM/>
+    </Window.DataContext>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <ListBox ItemsSource="{Binding Ds}"/>
+        <control:SimplePager Grid.Row="1" PageIndex="{Binding PageIndex,Mode=TwoWay}" PageSize="10" RecordCount="{Binding RecordCount}"  
+                             Command="{Binding PageChanged}"/>
+        <Button Grid.Row="2" Content="Refresh" Command="{Binding Refresh}" Padding="5"/>
+    </Grid>
+</Window>

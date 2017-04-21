@@ -25,7 +25,7 @@ namespace WPFControls
             InitializeComponent();
         }
 
-        #region 属性
+        #region 分页属性
 
         public int PageIndex
         {
@@ -56,31 +56,44 @@ namespace WPFControls
         }
 
         public static readonly DependencyProperty PageSizeProperty =
-              DependencyProperty.Register("PageSize", typeof(int), typeof(SimplePager), new PropertyMetadata(20, new PropertyChangedCallback(PageSizePropertyChanged)));
+              DependencyProperty.Register("PageSize", typeof(int), typeof(SimplePager), new PropertyMetadata(20, new PropertyChangedCallback(PageSizePropertyChanged),
+                  new CoerceValueCallback(CoerceProperValue)));
+
+        /// <summary>
+        /// PageSize最小为5
+        /// </summary>
+        /// <param name="d"></param>
+        /// <param name="baseValue"></param>
+        /// <returns></returns>
+        private static object CoerceProperValue(DependencyObject d, object baseValue)
+        {
+            int newvalue = (int)baseValue;
+            if (newvalue<5)
+            {
+                newvalue = 5;
+            }
+            return newvalue;
+        }
 
         private static void PageSizePropertyChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
             SimplePager pager = d as SimplePager;
             if (pager != null)
             {
-                pager.InitialData();
+                pager.SetProperParameter();
             }
         }
 
-        public int PageCount
+        /// <summary>
+        ///控件外部不能访问
+        /// </summary>
+        private int PageCount
         {
-            get
-            {
-                return (int)GetValue(PageCountProperty);
-            }
-            set
-            {
-                SetValue(PageCountProperty, value);
-            }
+            get; set;
         }
 
-        public static readonly DependencyProperty PageCountProperty =
-              DependencyProperty.Register("PageCount", typeof(int), typeof(SimplePager), new PropertyMetadata(1));
+        //public static readonly DependencyProperty PageCountProperty =
+        //      DependencyProperty.Register("PageCount", typeof(int), typeof(SimplePager), new PropertyMetadata(1));
 
 
         public int RecordCount
@@ -104,21 +117,23 @@ namespace WPFControls
             SimplePager pager = d as SimplePager;
             if (pager != null)
             {
-                pager.InitialData();
+                pager.SetProperParameter();
             }
         }
-
-        #endregion
-
-
         /// <summary>
         /// 初始化数据
         /// 只有在PageSize和RecordCount的值发生变化的时候进行
         /// </summary>
-        private void InitialData()
+        private void SetProperParameter()
         {
+            //只要一发生设置，就说明空间需要初始化了,PageSize和RecordCount都是外部设置的
+            PageIndex = 1;
+
+
             //根据RecordCount计算PageCount
-            if (RecordCount == 0)
+            //当记录数少于页大小的时候
+            //记录数少于
+            if (RecordCount <= PageSize)
             {
                 PageCount = 1;
             }
@@ -126,29 +141,13 @@ namespace WPFControls
             {
                 PageCount = RecordCount % PageSize > 0 ? (RecordCount / PageSize) + 1 : RecordCount / PageSize;
             }
-
-
-            //设置核验PageIndex和PageSize的值
-
-            if (PageIndex < 1)
-            {
-                PageIndex = 1;
-            }
-            if (PageIndex > PageCount)
-            {
-                PageIndex = PageCount;
-            }
-
-            if (PageSize < 1)
-            {
-                PageSize = 20;
-            }
-
-            SetText();
+            SetStatus();
+            SetButtonEnable();
         }
+        #endregion
 
         #region 设置控件文字和按钮
-        private void SetButton()
+        private void SetButtonEnable()
         {
             this.btnFirst.IsEnabled = CanGoFirstOrPrev();
             this.btnPrev.IsEnabled = CanGoFirstOrPrev();
@@ -168,10 +167,9 @@ namespace WPFControls
             return PageIndex < PageCount;
         }
 
-        private void SetText()
+        private void SetStatus()
         {
             txtPageInformation.Text = $"{LabelPageIndex}={PageIndex},{LabelPageCount}={PageCount},{LabelRecordCount}={RecordCount},{LabelPageSize}={PageSize}";
-            SetButton();
         }
         #endregion
 
@@ -221,8 +219,9 @@ namespace WPFControls
         {
             if (Command != null)
             {
-                SetText();
                 Command.Execute(CommandParameter);
+                SetButtonEnable();
+                SetStatus();
             }
         }
         private void OnCommandCanExecute()
@@ -235,7 +234,8 @@ namespace WPFControls
 
         #endregion
 
-        private void btnFirst_Click(object sender, RoutedEventArgs e)
+        #region 按钮事件
+   private void btnFirst_Click(object sender, RoutedEventArgs e)
         {
             PageIndex = 1;
             OnCommandExecute();
@@ -243,7 +243,7 @@ namespace WPFControls
 
         private void btnPrev_Click(object sender, RoutedEventArgs e)
         {
-            if (PageIndex>0)
+            if (PageIndex > 0)
             {
                 PageIndex--;
             }
@@ -252,7 +252,7 @@ namespace WPFControls
 
         private void btnNext_Click(object sender, RoutedEventArgs e)
         {
-            if (PageIndex<PageCount)
+            if (PageIndex < PageCount)
             {
                 PageIndex++;
             }
@@ -264,7 +264,8 @@ namespace WPFControls
             PageIndex = PageCount;
             OnCommandExecute();
         }
-
+        #endregion
+     
         #region 标签属性，用于中英文内容设置
 
         public string LabelPageIndex
